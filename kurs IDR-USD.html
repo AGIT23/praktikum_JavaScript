@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>IDR-USD</title>
+  </head>
+  <body>
+    <h1> Kurs IDR - USD </h1>
+    <div>IDR</div>
+    <input id="idr" type="number" placeholder="Masukan Jumlah">
+    <hr />
+    <div>USD</div>
+    <input id="usd" type="number" placeholder="Masukan Jumlah">
+    <script>
+        const kurs = 14650;
+
+        const usd = document.getElementById("usd");
+        const idr = document.getElementById("idr");
+
+        usd.addEventListener("input", function (ev) {
+        const value = ev.currentTarget.value;
+        const valueIDR = value * kurs;
+        idr.value = valueIDR;
+        });
+
+        idr.addEventListener("input", function (ev) {
+        const value = ev.currentTarget.value;
+        const valueUSD = value / kurs;
+        usd.value = valueUSD;
+        });
+
+    </script>
+  </body>
+</html>
